@@ -107,8 +107,8 @@ class Ontology:
         for text in texts:
             # 疾病:心律不齐-状态:阳性
             sv1, sv2 = text.split('-')
-            s1, v1 = sv1.split(':')
-            s2, v2 = sv2.split(':')
+            s1, v1 = sv1.split(':', 1)
+            s2, v2 = sv2.split(':', 1)
             v1_idx = self.ontology_dict[s1].index(v1)
             v2_idx = self.ontology_dict[s2].index(v2)
             slot_idx = v1_idx * n_status + v2_idx
