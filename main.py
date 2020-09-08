@@ -13,12 +13,12 @@ parser.add_argument('--end-lr', type=float, default=1e-4, help='End learning rat
 parser.add_argument('-e', '--epoch-num', type=int, default=100, help='Epoch num.')
 parser.add_argument('-b', '--batch-size', type=int, default=35, help='Batch size.')
 parser.add_argument('-t', '--tbatch-size', type=int, default=175, help='Test batch size.')
-parser.add_argument('-g', '--gpu-id', type=str, default='0', help='Gpu id.')
+parser.add_argument('-g', '--gpu-id', type=str, default='3', help='Gpu id.')
 parser.add_argument('-l', '--location', type=str, default='model_files/MIE', help='Location to save.')
 args = parser.parse_args()
 
 # import pdb; pdb.set_trace()
-#os.environ['CUDA_VISIBLE_DEVICES']=args.gpu_id
+os.environ['CUDA_VISIBLE_DEVICES']=args.gpu_id
 
 dictionary = Dictionary()
 dictionary.load('./data/dictionary.txt')
